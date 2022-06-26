@@ -1,0 +1,45 @@
+1 module explained
+
+---
+- hosts: localhost
+  connection: local
+  become: yes
+  become_method: sudo
+  roles:
+    - fresco_module
+
+-------------------------------------------------
+
+2 when clause
+
+---
+- hosts: localhost
+  connection: local
+  become: yes
+  become_method: sudo
+  roles:
+    - fresco_module
+
+-------------------------------------------------
+
+3 install nginx postgresql
+
+---
+- name: master playbook to install nginx
+  hosts: localhost  
+  become: yes
+  become_method: sudo
+  connection: local
+  roles:
+    - fresco_nginx
+-------------------------------------------------------
+
+4 loops
+
+---
+- hosts: localhost
+  connection: local
+  become: yes
+  become_method: sudo
+  roles:
+    - fresco_loops
